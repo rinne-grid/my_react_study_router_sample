@@ -1,0 +1,191 @@
+
+$backgroundColor: #F5F5F5;
+$selectionBgColor: #7cc6cf;
+$selectionFontColor: #fff;
+$aColor: #2a3297;
+$placeHolderColor: #999;
+
+// フォントの種類、サイズを指定
+html {
+    font-family: Helvetica, Arial, "Meiryo", "メイリオ",
+                "ヒラギノ角ゴ Pro w3", "Hiragino Kaku Gothic Pro, osaka",
+                "MS Pゴシック", sans-serif;
+    color: #475355;
+    font-size: 12px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    min-width: 1100px;
+    margin: 0;
+}
+
+// タブレットサイズになったときの最大サイズを指定する
+@media (max-width: 1024px) {
+    body {
+        min-width: 100%;
+    }
+}
+
+// 見出しタグの指定
+h1, h2, h3, h4, h5, h6 {
+    line-height: 2;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+// タブレットサイズ・スマホサイズになったときの見出しタグの行間の指定
+@media (max-width: 1024px) {
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 740px) {
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.4;
+    }
+}
+
+// ボーダーを余白に含めて計算を簡単にする
+h1, h2, h3, h4, h5, h6,
+article, aside, details, figcaption, figure, footer, header, main,
+menu, nav, section, summary, div, span, p, ul, ol, li, dl, dt, dd,
+table, tr, th, td, a, img, *:after, *:before {
+    box-sizing: border-box;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+// テキストを使うタグの指定
+p, li, dl, table {
+    line-break: strict;
+    word-break: break-strict;
+    word-wrap: break-word;
+    line-height: 2;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+small {
+    font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+    p, li, dl, table {
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 740px) {
+    p, li, dl, table {
+        line-height: 1.5;
+    }
+}
+
+// テーブルの中での改行の指定をする
+tr {
+    word-break: break-all;
+}
+
+// 折り返し禁止のクラス
+.nw {
+    white-space: nowrap;
+}
+
+// 画像と画像の間の余白を削除する
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+// ドラッグして選択したときの文字色と文字の背景色
+::selection {
+    background: $selectionBgColor;
+    color: $selectionFontColor;
+}
+
+::-moz-selection {
+    background: $selectionBgColor;
+    color: $selectionFontColor;
+}
+
+// リンクの文字とスタイル
+a {
+    background: transparent;
+    text-decoration: none;
+    color: $aColor;
+    transition: 0.3s;
+}
+
+a:focus {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+// afterまたはoverflowを使ってクリアするクラス
+// after型
+.cfx:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+// overflow型
+.cfxo {
+    overflow: hidden;
+}
+
+// リストタグのスタイルを消す
+ul,
+.li_none {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+dd {
+    margin-left: 0;
+}
+
+// リストタグのスタイルを戻す
+.ul {
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+// フォームの指定
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+select option {
+    padding: 0px 5px;
+}
+
+form label {
+    cursor: pointer;
+}
+
+input:-moz-placeholder {
+    color: $placeHolderColor;
+}
+
+input:-ms-input-placeholder {
+    color: $placeHolderColor;
+}
+
+input:placeholder {
+    color: $placeHolderColor;
+}
